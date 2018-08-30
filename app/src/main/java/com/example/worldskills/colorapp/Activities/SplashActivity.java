@@ -49,7 +49,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
 
                 //Una vez terminado el tiempo, asigno una intención a la activity principal y finalizo el splash.
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
                 finish();
             }
         };
