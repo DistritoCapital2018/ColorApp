@@ -19,21 +19,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/tvSettingsS">
 
         <RadioButton
             android:id="@+id/rbDefectoS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Por Defecto" />
+            android:text="@string/rbDefectoS" />
 
         <RadioButton
             android:id="@+id/rbPersonalizadoS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Personalizado" />
+            android:text="@string/rbPersonalizadoS"
+            android:textStyle="bold" />
 
     </RadioGroup>
 
@@ -44,7 +45,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="72dp"
-        android:text="Ingrese limite de tiempo: (milisegundos)"
+        android:text="@string/tvTiempoS"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/etTiempoS"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +55,7 @@
     <EditText
         android:id="@+id/etTiempoS"
         android:layout_width="181dp"
-        android:layout_height="37dp"
+        android:layout_height="46dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="number"
@@ -68,14 +70,15 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="52dp"
         android:inputType="number"
-        android:text="Ingrese limite de intetos: (milisegundos)"
+        android:text="@string/tvIntentosS"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTiempoS" />
 
     <EditText
         android:id="@+id/etIntentoS"
         android:layout_width="181dp"
-        android:layout_height="37dp"
+        android:layout_height="46dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="8dp"
         android:ems="10"
@@ -94,7 +97,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:onClick="onClick"
-        android:text="Guardar"
+        android:text="@string/btnGuardarS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -118,14 +121,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tiempo" />
+            android:text="@string/rbTiempoS" />
 
         <RadioButton
             android:id="@+id/rbIntentosS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Intentos" />
+            android:text="@string/rbIntentosS" />
     </RadioGroup>
 
     <TextView
@@ -135,7 +138,8 @@
         android:layout_marginBottom="8dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="56dp"
-        android:text="Palabra en milisegundos:"
+        android:text="@string/tvPalabraS"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnGuardarS"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvIntentosS"
@@ -144,7 +148,7 @@
     <EditText
         android:id="@+id/etPalabrasS"
         android:layout_width="181dp"
-        android:layout_height="37dp"
+        android:layout_height="46dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="8dp"
         android:ems="10"
@@ -156,14 +160,15 @@
         app:layout_constraintTop_toTopOf="@+id/tvPalabraS" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvSettingsS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
-        android:text="Settings ColorApp"
+        android:text="@string/tvSettingsS"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -174,9 +179,9 @@
         android:layout_width="71dp"
         android:layout_height="57dp"
         android:layout_marginEnd="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSettingsS"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/tvSettingsS"
         app:layout_constraintVertical_bias="0.4"
         app:srcCompat="@mipmap/ic_launcher" />
 

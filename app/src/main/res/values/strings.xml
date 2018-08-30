@@ -2,4 +2,13 @@
     <string name="app_name">ColorApp</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="title_activity_ranking">RankingActivity</string>
+    <string name="rbDefectoS">Por Defecto</string>
+    <string name="rbPersonalizadoS">Personalizado</string>
+    <string name="tvTiempoS">Ingrese limite de tiempo: (milisegundos)</string>
+    <string name="tvIntentosS">Ingrese limite de intetos: (milisegundos)</string>
+    <string name="btnGuardarS">Guardar</string>
+    <string name="rbTiempoS">Tiempo</string>
+    <string name="rbIntentosS">Intentos</string>
+    <string name="tvPalabraS">Palabra en milisegundos:</string>
+    <string name="tvSettingsS">Settings ColorApp</string>
 </resources>
