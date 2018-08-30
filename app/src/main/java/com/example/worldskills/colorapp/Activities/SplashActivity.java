@@ -1,4 +1,4 @@
-package com.example.worldskills.colorapp;
+package com.example.worldskills.colorapp.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import com.example.worldskills.colorapp.InitialScreens.MainActivity;
+import com.example.worldskills.colorapp.Activities.MainActivity;
+import com.example.worldskills.colorapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 
