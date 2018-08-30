@@ -29,6 +29,11 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     SQLiteDatabaseHelper conn;
 
 
+    int tiempoPalabras = 3000;
+    int limiteIntentos = 3;
+    int limiteTiempoPartida = 30000;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +71,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         rbPersonalizadoS.setOnClickListener(this);
         rbTiempoS.setOnClickListener(this);
         rbIntentosS.setOnClickListener(this);
-
+        btnGuardarS.setOnClickListener(this);
 
     }
 
@@ -76,9 +81,48 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
         switch (v.getId()) {
             case R.id.rbDefectoS:
+                guardarConfiguracionDefecto();
 
+            case R.id.btnGuardarS:
+
+                guardarConfiguracionDefecto();
+                guardarDefecto();
+                //guardarPersonalizado();
+        }
+
+    }
+
+    private void guardarDefecto() {
+
+        if(rbDefectoS.isChecked()){
+            SQLiteDatabase db = conn.getWritableDatabase();
+            ContentValues values1 = new ContentValues();
+            values1.put(TablaConfig.CAMPO_TIEMPO_PALABRAS, tiempoPalabras);
+            values1.put(TablaConfig.CAMPO_TIEMPO_INTENTOS, limiteIntentos);
+            values1.put(TablaConfig.CAMPO_TIEMPO_PARTIDA, limiteTiempoPartida);
+            values1.put(TablaConfig.CAMPO_TIPO_JUEGO, 0);
+
+            long id = db.insert(TablaConfig.TABLA_CONFIG, null, values1);
+            Toast.makeText(getApplicationContext(), "registro n#" +id, Toast.LENGTH_LONG).show();
 
         }
+
+    }
+
+    private void guardarConfiguracionDefecto() {
+
+
+        etPalabrasS.setText(""+tiempoPalabras);
+        etTiempoS.setText(""+limiteTiempoPartida);
+        etIntentosS.setText(""+limiteIntentos);
+
+        rbTiempoS.setEnabled(false);
+        rbIntentosS.setEnabled(false);
+
+        etPalabrasS.setEnabled(false);
+        etTiempoS.setEnabled(false);
+        etIntentosS.setEnabled(false);
+
 
     }
 
