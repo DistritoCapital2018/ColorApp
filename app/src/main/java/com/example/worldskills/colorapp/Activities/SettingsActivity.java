@@ -82,19 +82,36 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.rbDefectoS:
                 guardarConfiguracionDefecto();
-
+                break;
             case R.id.btnGuardarS:
 
                 guardarConfiguracionDefecto();
-                guardarDefecto();
-                //guardarPersonalizado();
+                if (rbDefectoS.isChecked()) {
+                    guardarDefecto();
+                }
+                break;
+            case R.id.rbPersonalizadoS:
+                if (rbPersonalizadoS.isChecked()) {
+                    guardarPersonalizado();
+                }
+                break;
         }
 
     }
 
+    private void guardarPersonalizado() {
+
+        rbTiempoS.setEnabled(true);
+        rbIntentosS.setEnabled(true);
+
+        etPalabrasS.setEnabled(true);
+        etTiempoS.setEnabled(true);
+        etIntentosS.setEnabled(true);
+    }
+
     private void guardarDefecto() {
 
-        if(rbDefectoS.isChecked()){
+        if (rbDefectoS.isChecked()) {
             SQLiteDatabase db = conn.getWritableDatabase();
             ContentValues values1 = new ContentValues();
             values1.put(TablaConfig.CAMPO_TIEMPO_PALABRAS, tiempoPalabras);
@@ -103,7 +120,19 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
             values1.put(TablaConfig.CAMPO_TIPO_JUEGO, 0);
 
             long id = db.insert(TablaConfig.TABLA_CONFIG, null, values1);
-            Toast.makeText(getApplicationContext(), "registro n#" +id, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "registro n#" + id, Toast.LENGTH_LONG).show();
+
+        } else if (rbPersonalizadoS.isChecked()) {
+            SQLiteDatabase db = conn.getWritableDatabase();
+            ContentValues values2 = new ContentValues();
+            values2.put(TablaConfig.CAMPO_TIEMPO_PALABRAS, etPalabrasS.getText().toString());
+            values2.put(TablaConfig.CAMPO_TIEMPO_INTENTOS, etIntentosS.getText().toString());
+            values2.put(TablaConfig.CAMPO_TIEMPO_PARTIDA, etTiempoS.getText().toString());
+            values2.put(TablaConfig.CAMPO_TIPO_JUEGO, 0);
+
+            long id = db.insert(TablaConfig.TABLA_CONFIG, null, values2);
+            Toast.makeText(getApplicationContext(), "registro n#" + id, Toast.LENGTH_LONG).show();
+
 
         }
 
@@ -112,9 +141,9 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     private void guardarConfiguracionDefecto() {
 
 
-        etPalabrasS.setText(""+tiempoPalabras);
-        etTiempoS.setText(""+limiteTiempoPartida);
-        etIntentosS.setText(""+limiteIntentos);
+        etPalabrasS.setText("" + tiempoPalabras);
+        etTiempoS.setText("" + limiteTiempoPartida);
+        etIntentosS.setText("" + limiteIntentos);
 
         rbTiempoS.setEnabled(false);
         rbIntentosS.setEnabled(false);
